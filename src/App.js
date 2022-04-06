@@ -47,7 +47,7 @@ export default function App() {
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`
     },
     {
-      name: "confirmpPssword",
+      name: "confirmPassword",
       type: "password",
       placeholder: "confrim password",
       label: "confirm password",
