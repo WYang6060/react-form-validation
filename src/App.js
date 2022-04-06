@@ -13,7 +13,6 @@ export default function App() {
 
   const inputObjList = [
     {
-      id: 1,
       name: "username",
       type: "text",
       placeholder: "user name",
@@ -24,7 +23,6 @@ export default function App() {
       required: true
     },
     {
-      id: 2,
       name: "email",
       type: "email",
       placeholder: "email",
@@ -33,7 +31,6 @@ export default function App() {
       required: true
     },
     {
-      id: 3,
       name: "birthday",
       type: "date",
       placeholder: "Birthday",
@@ -41,7 +38,6 @@ export default function App() {
       required: true
     },
     {
-      id: 4,
       name: "password",
       type: "password",
       placeholder: "password",
@@ -51,7 +47,6 @@ export default function App() {
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`
     },
     {
-      id: 5,
       name: "confirmpPssword",
       type: "password",
       placeholder: "confrim password",
@@ -73,18 +68,15 @@ export default function App() {
     <div className="App">
       <form action="" onSubmit={handleSubmit}>
         <h4>Register</h4>
-        {inputObjList.map((input, idx) => {
-          return (
-            <div className="field-control">
-              <FormInput
-                key={idx}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-              />
-            </div>
-          );
-        })}
+        {inputObjList.map((input, idx) => (
+          <div className="field-control" key={idx}>
+            <FormInput
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
+          </div>
+        ))}
         <button type="submit">Submit</button>
       </form>
     </div>

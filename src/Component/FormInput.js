@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const FormInput = (props) => {
   const [focused, setFocused] = useState(false);
-  const { errMsg, label, onChange, id, ...inputProps } = props;
+  const { errorMessage, label, onChange, id, ...inputProps } = props;
 
   const handleFocus = (e) => {
     setFocused(true);
@@ -10,7 +10,7 @@ const FormInput = (props) => {
   };
 
   return (
-    <div>
+    <>
       <label>{label}</label>
       <input
         onChange={onChange}
@@ -21,8 +21,8 @@ const FormInput = (props) => {
         }
         focused={focused.toString()}
       />
-      <span>{errMsg}</span>
-    </div>
+      <span>{errorMessage}</span>
+    </>
   );
 };
 
